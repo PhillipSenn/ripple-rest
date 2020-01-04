@@ -180,7 +180,7 @@ Or if there was an error that was caught immediately:
 }
 ```
 
-Note that a successfull POST request does NOT mean the transaction was validated. While a successful POST indicates that it is very likely the payment will be validated and written into the Ripple Ledger, the `status_url` should be used to check the status of an individual payment. At first the `state` will be `pending`, then `validated` or `failed`.
+Note that a successful POST request does NOT mean the transaction was validated. While a successful POST indicates that it is very likely the payment will be validated and written into the Ripple Ledger, the `status_url` should be used to check the status of an individual payment. At first the `state` will be `pending`, then `validated` or `failed`.
 
 If you want to monitor outgoing payments in bulk you can use the [Notifications](#notifications) to monitor finalized (either validated or failed) payments.
 
@@ -229,7 +229,7 @@ This query will respond with an array of fully-formed payments. The client can s
 
 #### GET /v1/accounts/{account}/payments{/hash,client_resource_id}{?source_account,destination_account,exclude_failed,start_ledger,end_ledger,earliest_first,results_per_page,page}
 
-Retrieve the details of one or more payments from the `rippled` server or, if the transaction failled off-network or is still pending, from the `ripple-rest` instance's local database.
+Retrieve the details of one or more payments from the `rippled` server or, if the transaction failed off-network or is still pending, from the `ripple-rest` instance's local database.
 
 ##### Retrieving an Individual Payment
 
